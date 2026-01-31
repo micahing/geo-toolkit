@@ -1,0 +1,55 @@
+name: data-eng
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python
+  - python=3.11
+  - pip
+
+  # Jupyter
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - ipywidgets
+
+  # Data manipulation
+  - pandas
+  - numpy
+  - pyarrow  # Parquet support
+
+  # HTTP/API requests
+  - requests
+  - aiohttp  # Async requests
+  - httpx    # Modern HTTP client
+
+  # Geospatial
+  - geopandas
+  - gdal
+  - rasterio
+  - fiona
+  - shapely
+  - pyproj
+  - folium
+  - mapclassify
+
+  # Visualization
+  - matplotlib
+  - seaborn
+  - plotly
+
+  # Data validation & utilities
+  - pyyaml
+  - python-dotenv
+  - tqdm  # Progress bars
+
+  # Testing
+  - pytest>=7.4.0
+  - pytest-cov
+  - pytest-mock
+  - responses
+  - pytest-timeout
+
+  # Development
+  - black
+  - ruff

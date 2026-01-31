@@ -1,0 +1,86 @@
+# API Configuration Example
+# Copy this file to api_config.yml and add your actual API keys
+
+# NOAA Climate Data Online
+# Get your free token at: https://www.ncdc.noaa.gov/cdo-web/token
+noaa:
+  api_token: "your_noaa_token_here"
+
+# USGS Water Services (no API key required)
+usgs:
+  # Base URL for reference
+  base_url: "https://waterservices.usgs.gov/nwis"
+
+# EPA Water Quality Portal (no API key required)
+epa:
+  base_url: "https://www.waterqualitydata.us"
+
+# Montana Data Sources (no API keys required for most)
+montana:
+  # Montana Mesonet (Montana Climate Office)
+  # API Docs: https://climate.umt.edu/mesonet/api/
+  mesonet:
+    base_url: "https://mesonet.climate.umt.edu/api/v2"
+    dashboard: "https://mesonet.climate.umt.edu/dash/"
+
+  # Ground Water Information Center (MBMG)
+  # Website: https://mbmggwic.mtech.edu/
+  gwic:
+    base_url: "https://mbmggwic.mtech.edu"
+    gis_hub: "https://gis-data-hub-mbmg.hub.arcgis.com/"
+
+  # DNRC Water Resources
+  # StAGE: https://gis.dnrc.mt.gov/apps/stage/
+  dnrc:
+    stage_url: "https://gis.dnrc.mt.gov/apps/stage/"
+    wrqs_url: "https://wrqs.dnrc.mt.gov/"
+
+  # Montana State Library GIS
+  state_library:
+    data_catalog: "https://mslservices.mt.gov/geographic_information/data/datalist/"
+
+# Optional: Mapbox for enhanced mapping features
+# Get your token at: https://account.mapbox.com/access-tokens/
+mapbox:
+  access_token: "your_mapbox_token_here"
+
+# Default settings
+defaults:
+  # Default region of interest (uncomment your preferred region)
+
+  # Option 1: Colorado River Basin
+  region:
+    name: "Colorado River Basin"
+    hucs:
+      - "14"  # Upper Colorado
+      - "15"  # Lower Colorado
+    states:
+      - "CO"
+      - "UT"
+      - "AZ"
+      - "NV"
+      - "NM"
+      - "WY"
+      - "CA"
+
+  # Option 2: Montana (uncomment to use)
+  # region:
+  #   name: "Montana"
+  #   hucs:
+  #     - "10"  # Missouri River
+  #     - "17"  # Pacific Northwest (Clark Fork)
+  #   state: "MT"
+  #   counties:  # Optional: focus on specific counties
+  #     - "Gallatin"
+  #     - "Yellowstone"
+  #     - "Missoula"
+
+  # Default date range (can be overridden)
+  date_range:
+    start: "2020-01-01"
+    end: null  # null means current date
+
+  # Data storage preferences
+  storage:
+    format: "parquet"
+    compression: "snappy"
