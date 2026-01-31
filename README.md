@@ -15,7 +15,7 @@ A self-contained Python environment for scientific data engineering, focused on 
 
 2. **Create the conda environment:**
    ```bash
-   cd claude-dev
+   cd geo-toolkit
    conda env create -f environment.yml
    ```
 
